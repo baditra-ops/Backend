@@ -337,3 +337,63 @@ img {
 .comment-card h4{
   margin-bottom:8px;
 }
+
+.channel-link{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.channel-link:hover{
+  color:#ff0000;
+}
+
+.channel-page{
+  min-height:100vh;
+  background:#0f0f0f;
+  color:white;
+  padding:40px;
+}
+
+.channel-header{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.channel-avatar-large{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.channel-videos-title{
+  margin-top:40px;
+}
+
+.channel-videos{
+  margin-top:20px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+
+  gap:20px;
+}
+
+.channel-video-card{
+  background:#1f1f1f;
+  border-radius:10px;
+  padding:10px;
+}
+
+.channel-video-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.channel-video-card h3{
+  margin-top:10px;
+}

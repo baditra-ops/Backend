@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import api from "../services/api"
+import { Link } from "react-router-dom"
 
 function VideoPlayer() {
   const { id } = useParams()
@@ -127,7 +128,12 @@ const handleComment = async () => {
           />
 
           <div>
-            <h3>{video.owner?.username}</h3>
+            <Link
+  to={`/channel/${video.owner?.username}`}
+  className="channel-link"
+>
+  {video.owner?.username}
+</Link>
             <p>
   {video.owner?.fullName}
   • {video.views} views
