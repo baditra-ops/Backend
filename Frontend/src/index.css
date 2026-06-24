@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.navbar {
+  height: 60px;
+  background: #181818;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 30px;
+
+  border-bottom: 1px solid #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.sidebar {
+  width: 220px;
+  height: calc(100vh - 60px);
+
+  background: #181818;
+
+  padding: 20px;
+
+  position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 20px;
+}
+.video-grid {
+  margin-left: 240px;
+
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(300px, 1fr));
+
+  gap: 20px;
+}
+
+.video-card {
+  background: #181818;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+}
+
+.video-card h3 {
+  padding: 10px;
+}
+
+.video-card p {
+  padding: 0 10px 10px;
+  color: #aaa;
+}
+
+.player-page {
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  color: white;
+  padding: 30px;
+}
+
+.player-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.video-player {
+  width: 100%;
+  border-radius: 12px;
+  background: black;
+}
+
+.video-title {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.video-meta {
+  margin-top: 10px;
+  color: #aaaaaa;
+}
+
+.video-description {
+  margin-top: 20px;
+  background: #1f1f1f;
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.player-loading {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.upload-page {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-container {
+  width: 600px;
+
+  background: #1f1f1f;
+
+  padding: 30px;
+
+  border-radius: 12px;
+}
+
+.upload-container h1 {
+  margin-bottom: 20px;
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.upload-container input,
+.upload-container textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+.upload-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.upload-container button {
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
