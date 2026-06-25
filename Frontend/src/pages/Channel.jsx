@@ -51,44 +51,52 @@ function Channel() {
   return (
     <div className="channel-page">
 
-      <div className="channel-header">
+     <div className="channel-banner">
 
-        <img
-          src={channel.avatar}
-          alt=""
-          className="channel-avatar-large"
-        />
+  <img
+    src={
+      channel.coverImage ||
+      "https://via.placeholder.com/1200x250"
+    }
+    alt=""
+  />
 
-        <div>
+</div>
 
-          <h1>
-            {channel.fullName}
-          </h1>
+<div className="channel-header">
 
-          <h3>
-            @{channel.username}
-          </h3>
+  <img
+    src={channel.avatar}
+    alt=""
+    className="channel-avatar-large"
+  />
 
-          <p>
-            {channel.subscribersCount} Subscribers
-          </p>
+  <div className="channel-details">
 
-          <p>
-            {channel.channelsSubscribedToCount}
-            {" "}
-            Subscriptions
-          </p>
-          <button className="subscribe-btn">
-  {channel.isSubscribed
-    ? "Subscribed"
-    : "Subscribe"}
-</button>
+    <h1>
+      {channel.fullName}
+    </h1>
 
-        </div>
+    <p className="channel-username">
+      @{channel.username}
+    </p>
 
-      </div>
+    <p className="channel-stats">
+      {channel.subscribersCount} subscribers • {" "}
+      {videos.length} videos
+    </p>
+
+  </div>
+
+  <button className="subscribe-btn">
+    {channel.isSubscribed
+      ? "Subscribed"
+      : "Subscribe"}
+  </button>
+
+</div>
       <h2 className="channel-videos-title">
-  Uploaded Videos
+  Videos
 </h2>
 
 <div className="channel-videos">

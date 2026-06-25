@@ -12,6 +12,8 @@ function VideoPlayer() {
   const [subscribed, setSubscribed] = useState(false)
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
+  const [playlists, setPlaylists] = useState([])
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false)
 
   useEffect(() => {
     fetchVideo()
@@ -85,6 +87,43 @@ const handleComment = async () => {
     console.log(error)
   }
 }
+const fetchUserPlaylists = async () => {
+  try {
+
+    const userRes =
+      await api.get("/users/current-user")
+
+    const userId =
+      userRes.data.data._id
+
+    const res =
+      await api.get(
+        `/playlist/user/${userId}`
+      )
+
+    setPlaylists(res.data.data)
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+const addToPlaylist = async (
+  playlistId
+) => {
+  try {
+
+    await api.patch(
+      `/playlist/add/${id}/${playlistId}`
+    )
+
+    alert("Added to playlist")
+
+    setShowPlaylistModal(false)
+
+  } catch (error) {
+    console.log(error)
+  }
+}
 
   if (loading) {
     return (
@@ -124,6 +163,15 @@ const handleComment = async () => {
   >
     {liked ? "❤️ Liked" : "👍 Like"}
   </button>
+  <button
+  className="playlist-btn"
+  onClick={() => {
+    fetchUserPlaylists()
+    setShowPlaylistModal(true)
+  }}
+>
+  ➕ Save
+</button>
 
 </div>
 
@@ -213,7 +261,42 @@ const handleComment = async () => {
 </div>
 
     </div>
+   {showPlaylistModal && (
+  <div className="playlist-modal">
 
+    <div className="playlist-modal-card">
+
+      <h2>Save To Playlist</h2>
+
+      {playlists.length === 0 ? (
+        <p>No playlists found</p>
+      ) : (
+        playlists.map((playlist) => (
+          <button
+            key={playlist._id}
+            className="playlist-option"
+            onClick={() =>
+              addToPlaylist(playlist._id)
+            }
+          >
+            {playlist.name}
+          </button>
+        ))
+      )}
+
+      <button
+        className="close-modal-btn"
+        onClick={() =>
+          setShowPlaylistModal(false)
+        }
+      >
+        Close
+      </button>
+
+    </div>
+
+  </div>
+)}
   </div>
 )
 }

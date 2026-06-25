@@ -6,6 +6,8 @@ import Register from "./pages/Register"
 import UploadVideo from "./pages/UploadVideo"
 import VideoPlayer from "./pages/VideoPlayer"
 import Channel from "./pages/Channel"
+import Playlists from "./pages/Playlists"
+import PlaylistDetails from "./pages/PlaylistDetails"
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
         <Route path="/video/:id" element={<VideoPlayer />} />
 
         <Route path="/channel/:id" element={<Channel />} />
+
+        <Route path="playlist" element={<Playlists />} />
+        <Route
+         path="/playlist/:id"
+          element={<PlaylistDetails />}
+        />
 
       </Routes>
     </BrowserRouter>

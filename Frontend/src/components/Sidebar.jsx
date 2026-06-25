@@ -25,7 +25,7 @@ function Sidebar() {
         <span>History</span>
       </Link>
 
-      <Link to="/playlists" className="sidebar-item">
+      <Link to="/playlist" className="sidebar-item">
         <span>📁</span>
         <span>Playlists</span>
       </Link>
