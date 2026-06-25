@@ -117,7 +117,7 @@ const handleComment = async () => {
 
 </div>
 
-      <div className="video-info">
+      <div className="video-infos">
 
         <div className="channel-info">
 
