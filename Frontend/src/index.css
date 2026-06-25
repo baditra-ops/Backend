@@ -1188,22 +1188,29 @@ img {
 }
 
 .settings-card{
-  width:700px;
+  width:750px;
 
   background:#181818;
 
-  border-radius:20px;
+  border-radius:24px;
 
-  padding:30px;
+  padding:35px;
 
   color:white;
 
+  border:1px solid #252525;
+
   box-shadow:
-  0 0 30px rgba(0,0,0,.4);
+    0 10px 40px rgba(0,0,0,.45);
 }
 
 .settings-card h1{
-  margin-bottom:25px;
+  font-size:40px;
+  font-weight:700;
+
+  margin-bottom:30px;
+
+  letter-spacing:-1px;
 }
 
 .profile-preview{
@@ -1222,61 +1229,85 @@ img {
 
   object-fit:cover;
 
-  border:4px solid #ff0000;
+ border:4px solid #ef4444;
+ box-shadow:
+  0 0 20px rgba(239,68,68,.25);
 }
 
 .settings-cover{
-  width:250px;
-  height:100px;
+  width:320px;
+  height:120px;
 
-  border-radius:12px;
+  border-radius:16px;
 
   object-fit:cover;
+
+  border:1px solid #333;
 }
 
 .settings-card input{
   width:100%;
 
-  padding:14px;
+  padding:15px;
 
-  margin-bottom:15px;
-
-  background:#272727;
+  background:#252525;
 
   color:white;
+
+  border:1px solid transparent;
+
+  border-radius:14px;
+
+  transition:.25s;
+}
+
+.settings-card input:focus{
+  outline:none;
+
+  border-color:#ef4444;
+
+  background:#2a2a2a;
+}
+
+.settings-card button{
+  padding:14px 22px;
 
   border:none;
 
   border-radius:12px;
-}
 
-.settings-card button{
-  padding:12px 20px;
-
-  border:none;
-
-  border-radius:999px;
-
-  background:#ff0000;
+  background:#ef4444;
 
   color:white;
 
+  font-size:15px;
   font-weight:600;
 
   cursor:pointer;
 
-  transition:.2s;
+  transition:all .25s ease;
+
+  box-shadow:
+    0 4px 15px rgba(239,68,68,.25);
 }
 
 .settings-card button:hover{
-  background:#e00000;
+  background:#f87171;
+
   transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(239,68,68,.35);
 }
 
 .upload-section{
   margin-top:25px;
 
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+  background:#222;
+
+  padding:20px;
+
+  border-radius:16px;
+
+  border:1px solid #2f2f2f;
 }
