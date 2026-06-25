@@ -24,14 +24,25 @@ const handleLogin = async () => {
   }
 }
 
-  return (
+return (
   <div className="login-page">
 
     <div className="login-card">
 
-      <h1>VideoTube</h1>
+      <h1 className="login-logo">
+        ▶ VideoTube
+      </h1>
+
+      <h2 className="login-title">
+        Welcome Back
+      </h2>
+
+      <p className="login-subtitle">
+        Sign in to continue watching and uploading videos
+      </p>
 
       <input
+        type="email"
         placeholder="Email"
         onChange={(e) =>
           setEmail(e.target.value)
@@ -46,9 +57,21 @@ const handleLogin = async () => {
         }
       />
 
-      <button onClick={handleLogin}>
-        Login
+      <button
+        className="login-btn"
+        onClick={handleLogin}
+      >
+        Sign In
       </button>
+
+      <p className="login-footer">
+        Don't have an account?
+        <span
+          onClick={() => navigate("/register")}
+        >
+          Register
+        </span>
+      </p>
 
     </div>
 
