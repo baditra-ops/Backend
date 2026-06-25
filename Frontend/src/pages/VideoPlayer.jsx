@@ -18,17 +18,27 @@ function VideoPlayer() {
     fetchComments()
   }, [id])
 
-  const fetchVideo = async () => {
-    try {
-      const res = await api.get(`/videos/${id}`)
+const fetchVideo = async () => {
+  try {
 
-      setVideo(res.data.data)
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setLoading(false)
-    }
+    const res = await api.get(`/videos/${id}`)
+
+    setVideo(res.data.data)
+
+    const channelRes = await api.get(
+      `/users/c/${res.data.data.owner.username}`
+    )
+
+    setSubscribed(
+      channelRes.data.data.isSubscribed
+    )
+
+  } catch (error) {
+    console.log(error)
+  } finally {
+    setLoading(false)
   }
+}
   const handleLike = async () => {
   try {
     await api.post(`/likes/toggle/v/${id}`)
