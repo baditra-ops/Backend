@@ -8,6 +8,7 @@ import VideoPlayer from "./pages/VideoPlayer"
 import Channel from "./pages/Channel"
 import Playlists from "./pages/Playlists"
 import PlaylistDetails from "./pages/PlaylistDetails"
+import ProfileSettings from "./pages/ProfileSettings"
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
          path="/playlist/:id"
           element={<PlaylistDetails />}
         />
+
+        <Route
+        path="/settings"
+        element={<ProfileSettings />}
+       />
 
       </Routes>
     </BrowserRouter>

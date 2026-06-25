@@ -35,6 +35,10 @@ function Sidebar() {
         <span>Liked Videos</span>
       </Link>
 
+      <Link to="/settings" className="sidebar-item">
+      ⚙️ Settings 
+      </Link>
+
     </aside>
   )
 }
