@@ -160,32 +160,88 @@ img {
   margin:0;
   font-size:28px;
 }
-.sidebar {
-  width: 220px;
-  height: calc(100vh - 60px);
+.sidebar{
+  width:240px;
 
-  background: #181818;
+  height:calc(100vh - 70px);
 
-  padding: 20px;
+  background:#0f0f0f;
 
-  position: fixed;
+  border-right:1px solid #272727;
+
+  position:fixed;
+
+  left:0;
+  top:70px;
+
+  padding:12px;
+
+  overflow-y:auto;
 }
 
-.sidebar a {
-  display: block;
-  margin-bottom: 20px;
+.sidebar::-webkit-scrollbar{
+  width:6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+  background:#333;
+  border-radius:10px;
+}
+
+.sidebar-item{
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:12px 16px;
+
+  border-radius:12px;
+
+  margin-bottom:4px;
+
+  transition:.2s;
+}
+
+.sidebar-item:hover{
+  background:#272727;
+}
+
+.sidebar-item span:first-child{
+  font-size:20px;
+}
+
+.sidebar-divider{
+  height:1px;
+
+  background:#272727;
+
+  margin:15px 0;
+}
+
+.sidebar-section h4{
+  color:#aaaaaa;
+
+  margin:10px 16px;
+
+  font-size:14px;
 }
 .video-grid {
-  margin-left: 240px;
+  margin-left: 260px;
 
   padding: 20px;
 
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fill, minmax(300px, 1fr));
+    repeat(auto-fill, minmax(320px, 1fr));
 
-  gap: 20px;
+  gap: 24px;
 }
 
 .video-card {
