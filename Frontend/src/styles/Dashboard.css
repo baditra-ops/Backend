@@ -1,0 +1,402 @@
+/* ================= DASHBOARD ================= */
+
+.dashboard-page{
+
+    margin-left:240px;
+    padding:35px;
+    min-height:100vh;
+
+    background:#0f0f0f;
+    color:white;
+}
+
+.dashboard-title{
+
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:35px;
+}
+
+
+/* ===== Stats ===== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:45px;
+}
+
+.stat-card{
+
+    background:linear-gradient(
+        145deg,
+        #1d1d1d,
+        #2a2a2a
+    );
+
+    border-radius:18px;
+
+    padding:28px;
+
+    text-align:center;
+
+    border:1px solid #333;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.35);
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#ff5f5f;
+
+    box-shadow:
+        0 15px 35px rgba(255,95,95,.15);
+}
+
+.stat-icon{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.stat-card h2{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+}
+
+.stat-card p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+}
+
+
+/* ===== Uploaded Videos ===== */
+
+.videos-section{
+
+    background:#181818;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    border:1px solid #2d2d2d;
+}
+
+.videos-section h2{
+
+    margin-bottom:25px;
+
+    font-size:28px;
+}
+
+
+/* ===== Video Card ===== */
+
+.dashboard-video-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    background:#232323;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+    border:1px solid transparent;
+}
+
+.dashboard-video-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#ff6666;
+
+    background:#292929;
+}
+
+.dashboard-thumb{
+
+    width:260px;
+
+    height:145px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+}
+
+.dashboard-video-details{
+
+    flex:1;
+}
+
+.dashboard-video-title{
+
+    color:white;
+
+    font-size:22px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.dashboard-video-title:hover{
+
+    color:#ff6b6b;
+}
+
+.dashboard-video-details p{
+
+    margin-top:10px;
+
+    color:#b5b5b5;
+
+    font-size:15px;
+}
+
+
+/* ===== Buttons ===== */
+
+.dashboard-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn{
+
+    width:120px;
+
+    text-align:center;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.view-btn{
+
+    background:#2d7dff;
+
+    color:white;
+}
+
+.view-btn:hover{
+
+    background:#1565ff;
+
+    transform:scale(1.05);
+}
+
+.edit-btn{
+
+    background:#ffb347;
+
+    color:black;
+}
+
+.edit-btn:hover{
+
+    background:#ffa000;
+
+    transform:scale(1.05);
+}
+
+.delete-btn{
+
+    background:#ff6666;
+
+    color:white;
+}
+
+.delete-btn:hover{
+
+    background:#ff3d3d;
+
+    transform:scale(1.05);
+}
+
+
+/* ===== Empty Dashboard ===== */
+
+.empty-dashboard{
+
+    text-align:center;
+
+    padding:70px 20px;
+}
+
+.empty-dashboard h2{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+}
+
+.empty-dashboard p{
+
+    color:#aaa;
+
+    font-size:18px;
+
+    margin-bottom:25px;
+}
+
+.upload-first-video{
+
+    display:inline-block;
+
+    padding:14px 26px;
+
+    border-radius:30px;
+
+    background:#ff5f5f;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.upload-first-video:hover{
+
+    background:#ff4040;
+
+    transform:translateY(-3px);
+}
+
+
+/* ===== Loading ===== */
+
+.dashboard-loading{
+
+    margin-left:240px;
+
+    color:white;
+
+    font-size:28px;
+
+    text-align:center;
+
+    margin-top:120px;
+}
+
+
+/* ===== Responsive ===== */
+
+@media(max-width:1100px){
+
+.dashboard-video-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+.dashboard-thumb{
+
+    width:100%;
+
+    height:260px;
+}
+
+.dashboard-actions{
+
+    width:100%;
+
+    flex-direction:row;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn{
+
+    flex:1;
+
+    width:auto;
+}
+
+}
+
+@media(max-width:700px){
+
+.dashboard-page{
+
+    margin-left:0;
+
+    padding:20px;
+}
+
+.dashboard-thumb{
+
+    height:190px;
+}
+
+.dashboard-title{
+
+    font-size:28px;
+}
+
+.videos-section{
+
+    padding:20px;
+}
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+}
+
+}

@@ -11,6 +11,7 @@ import PlaylistDetails from "./pages/PlaylistDetails"
 import ProfileSettings from "./pages/ProfileSettings"
 import LikedVideos from "./pages/LikedVideos"
 import History from "./pages/History"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
   return (
@@ -48,6 +49,10 @@ function App() {
       <Route
      path="/history"
      element={<History />}
+     />
+     <Route
+     path="/dashboard"
+     element={<Dashboard/>}
      />
 
       </Routes>

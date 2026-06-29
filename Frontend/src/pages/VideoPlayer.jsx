@@ -14,11 +14,28 @@ function VideoPlayer() {
   const [newComment, setNewComment] = useState("")
   const [playlists, setPlaylists] = useState([])
   const [showPlaylistModal, setShowPlaylistModal] = useState(false)
-
+  const [currentUser, setCurrentUser] = useState(null)
+  const [editingComment, setEditingComment] = useState(null)
+  const [editedContent, setEditedContent] = useState("")
+  
   useEffect(() => {
-    fetchVideo()
-    fetchComments()
-  }, [id])
+  fetchCurrentUser()
+  fetchVideo()
+  fetchComments()
+}, [id])
+
+const fetchCurrentUser = async () => {
+  try {
+
+    const res =
+      await api.get("/users/current-user")
+
+    setCurrentUser(res.data.data)
+
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 const fetchVideo = async () => {
   try {
@@ -97,6 +114,43 @@ const handleComment = async () => {
   } catch (error) {
     console.log(error)
   }
+}
+const deleteComment = async (commentId) => {
+
+  try {
+
+    await api.delete(
+      `/comments/c/${commentId}`
+    )
+
+    fetchComments()
+
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+const updateComment = async (
+  commentId
+) => {
+
+  try {
+
+    await api.patch(
+      `/comments/c/${commentId}`,
+      {
+        content: editedContent
+      }
+    )
+
+    setEditingComment(null)
+
+    fetchComments()
+
+  } catch (error) {
+    console.log(error)
+  }
+
 }
 const fetchUserPlaylists = async () => {
   try {
@@ -248,24 +302,114 @@ const addToPlaylist = async (
 
   <div className="comments-list">
 
-    {comments.map((comment) => (
+   {comments.map((comment) => (
 
-      <div
-        key={comment._id}
-        className="comment-card"
-      >
+  <div
+    key={comment._id}
+    className="comment-card"
+  >
 
-        <h4>
-          {comment.owner?.username || "User"}
-        </h4>
+    <div className="comment-top">
 
-        <p>
-          {comment.content}
-        </p>
+      <div className="comment-user">
+
+        <img
+          src={comment.owner?.avatar}
+          alt=""
+          className="comment-avatar"
+        />
+
+        <div>
+
+          <h4>
+            {comment.owner?.username}
+          </h4>
+
+          {editingComment === comment._id ? (
+
+            <textarea
+              value={editedContent}
+              onChange={(e) =>
+                setEditedContent(e.target.value)
+              }
+              className="edit-comment-input"
+            />
+
+          ) : (
+
+            <p>{comment.content}</p>
+
+          )}
+
+        </div>
 
       </div>
 
-    ))}
+      {currentUser?._id === comment.owner?._id && (
+
+        <div className="comment-actions">
+
+          {editingComment === comment._id ? (
+
+            <>
+              <button
+                className="save-comment-btn"
+                onClick={() =>
+                  updateComment(comment._id)
+                }
+              >
+                Save
+              </button>
+
+              <button
+                className="cancel-comment-btn"
+                onClick={() =>
+                  setEditingComment(null)
+                }
+              >
+                Cancel
+              </button>
+            </>
+
+          ) : (
+
+            <>
+              <button
+                className="edit-comment-btn"
+                onClick={() => {
+
+                  setEditingComment(comment._id)
+
+                  setEditedContent(
+                    comment.content
+                  )
+
+                }}
+              >
+                Edit✏️
+              </button>
+
+              <button
+                className="delete-comment-btn"
+                onClick={() =>
+                  deleteComment(comment._id)
+                }
+              >
+               Delete🗑️
+              </button>
+            </>
+
+          )}
+
+        </div>
+
+      )}
+
+    </div>
+
+  </div>
+
+))}
 
   </div>
 
