@@ -12,6 +12,7 @@ import ProfileSettings from "./pages/ProfileSettings"
 import LikedVideos from "./pages/LikedVideos"
 import History from "./pages/History"
 import Dashboard from "./pages/Dashboard"
+import EditVideo from "./pages/EditVideo"
 
 function App() {
   return (
@@ -54,6 +55,11 @@ function App() {
      path="/dashboard"
      element={<Dashboard/>}
      />
+
+      <Route
+      path="/edit-video/:id"
+      element={<EditVideo/>}
+      />
 
       </Routes>
     </BrowserRouter>
