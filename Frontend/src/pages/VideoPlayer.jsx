@@ -31,9 +31,15 @@ const fetchVideo = async () => {
       `/users/c/${res.data.data.owner.username}`
     )
 
-    setSubscribed(
-      channelRes.data.data.isSubscribed
+    setSubscribed(channelRes.data.data.isSubscribed)
+
+    const likedRes = await api.get("/likes/videos")
+
+    const isLiked = likedRes.data.data.some(
+      (item) => item.video._id === id
     )
+
+    setLiked(isLiked)
 
   } catch (error) {
     console.log(error)
@@ -45,7 +51,12 @@ const fetchVideo = async () => {
   try {
     await api.post(`/likes/toggle/v/${id}`)
 
-    setLiked(!liked)
+    const likedRes = await api.get("/likes/videos")
+
+    const isLiked = likedRes.data.data.some(
+    (item) => item.video._id === id
+)
+    setLiked(isLiked)
   } catch (error) {
     console.log(error)
   }

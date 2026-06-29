@@ -9,6 +9,7 @@ import Channel from "./pages/Channel"
 import Playlists from "./pages/Playlists"
 import PlaylistDetails from "./pages/PlaylistDetails"
 import ProfileSettings from "./pages/ProfileSettings"
+import LikedVideos from "./pages/LikedVideos"
 
 function App() {
   return (
@@ -37,6 +38,11 @@ function App() {
         path="/settings"
         element={<ProfileSettings />}
        />
+
+       <Route
+      path="/liked"
+      element={<LikedVideos />}
+      />
 
       </Routes>
     </BrowserRouter>
