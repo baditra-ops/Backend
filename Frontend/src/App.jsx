@@ -10,6 +10,7 @@ import Playlists from "./pages/Playlists"
 import PlaylistDetails from "./pages/PlaylistDetails"
 import ProfileSettings from "./pages/ProfileSettings"
 import LikedVideos from "./pages/LikedVideos"
+import History from "./pages/History"
 
 function App() {
   return (
@@ -43,6 +44,11 @@ function App() {
       path="/liked"
       element={<LikedVideos />}
       />
+
+      <Route
+     path="/history"
+     element={<History />}
+     />
 
       </Routes>
     </BrowserRouter>
