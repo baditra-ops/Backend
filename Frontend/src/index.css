@@ -1873,3 +1873,472 @@ img {
 
     transform:translateY(-2px);
 }
+
+/* Responsiveness */
+
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media screen and (max-width: 1024px){
+
+.navbar{
+    padding:0 18px;
+}
+
+.search-container{
+    width:45%;
+}
+
+.logo-text{
+    font-size:24px;
+}
+
+.nav-links{
+    gap:10px;
+}
+
+.logout-btn{
+    padding:8px 15px;
+}
+
+}
+@media screen and (max-width:768px){
+
+.navbar{
+
+    height:auto;
+
+    padding:12px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.logo{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.search-container{
+
+    width:100%;
+
+}
+
+.search-container input{
+
+    min-width:0;
+
+}
+
+.nav-links{
+
+    width:100%;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.user-info span{
+
+    display:none;
+
+}
+
+.nav-avatar{
+
+    width:36px;
+    height:36px;
+
+}
+
+}
+@media screen and (max-width:768px){
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+    bottom:0;
+
+    top:auto;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    align-items:center;
+
+    padding:0;
+
+    border-right:none;
+
+    border-top:1px solid #272727;
+
+    overflow:hidden;
+
+}
+
+.sidebar-section{
+
+    display:flex;
+
+}
+
+.sidebar-divider,
+.sidebar h4{
+
+    display:none;
+
+}
+
+.sidebar-item{
+
+    flex-direction:column;
+
+    gap:4px;
+
+    margin:0;
+
+    padding:6px;
+
+    font-size:12px;
+
+}
+
+.sidebar-item span:first-child{
+
+    font-size:22px;
+
+}
+
+}
+@media screen and (max-width:1024px){
+
+.video-grid{
+
+    margin-left:220px;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(280px,1fr));
+
+}
+
+}
+
+@media screen and (max-width:768px){
+
+.video-grid{
+
+    margin-left:0;
+
+    margin-bottom:90px;
+
+    padding:18px;
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media screen and (max-width:480px){
+
+.video-grid{
+
+    padding:12px;
+
+}
+
+}
+@media screen and (max-width:768px){
+
+.video-thumbnail{
+
+    height:auto;
+
+    aspect-ratio:16/9;
+
+}
+
+.video-info{
+
+    padding:12px 8px;
+
+}
+
+.video-title{
+
+    font-size:15px;
+
+}
+
+.channel-name{
+
+    font-size:13px;
+
+}
+
+.video-stats{
+
+    font-size:12px;
+
+}
+
+}
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+img,
+video{
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+*{
+
+    box-sizing:border-box;
+
+}
+@media screen and (max-width:768px){
+
+.upload-container{
+
+    width:95%;
+
+}
+
+}
+@media screen and (max-width:768px){
+
+.login-card,
+.register-card{
+
+    width:95%;
+
+    padding:25px;
+
+}
+
+.login-logo{
+
+    font-size:32px;
+
+}
+
+.register-logo h1{
+
+    font-size:40px;
+
+}
+
+}
+@media screen and (max-width:768px){
+
+.sidebar-item span:last-child{
+
+    display:none;
+
+}
+
+}
+/* ===========================
+   WATCH HISTORY
+=========================== */
+
+@media screen and (max-width: 768px){
+
+.history-page{
+
+    padding:20px 15px 90px;
+
+}
+
+.history-title{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+.history-card{
+
+    flex-direction:column;
+
+    gap:15px;
+
+    padding:14px;
+
+}
+
+.history-thumbnail{
+
+    width:100%;
+
+    height:auto;
+
+    aspect-ratio:16/9;
+
+}
+
+.history-details h2{
+
+    font-size:20px;
+
+}
+
+.history-channel{
+
+    gap:8px;
+
+}
+
+.history-avatar{
+
+    width:32px;
+    height:32px;
+
+}
+
+.history-channel span{
+
+    font-size:14px;
+
+}
+
+.history-description{
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+}
+/* ===========================
+   SETTINGS PAGE
+=========================== */
+
+@media screen and (max-width:768px){
+
+.settings-page{
+
+    padding:20px 15px 90px;
+
+}
+
+.settings-card{
+
+    width:100%;
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.settings-card h1{
+
+    font-size:30px;
+
+    text-align:center;
+
+}
+
+.profile-preview{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:18px;
+
+}
+
+.settings-avatar{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+.settings-cover{
+
+    width:100%;
+
+    height:auto;
+
+    aspect-ratio:16/6;
+
+}
+
+.settings-card input{
+
+    font-size:15px;
+
+}
+
+.settings-card button{
+
+    width:100%;
+
+}
+
+.upload-section{
+
+    padding:16px;
+
+}
+
+}
+
+@media screen and (max-width:480px){
+
+.settings-card{
+
+    padding:18px;
+
+}
+
+.settings-card h1{
+
+    font-size:26px;
+
+}
+
+.settings-avatar{
+
+    width:80px;
+
+    height:80px;
+
+}
+
+}
+
