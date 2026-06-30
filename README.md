@@ -4,6 +4,14 @@ A modern full-stack video sharing platform inspired by YouTube, built using the 
 
 ---
 
+## 🌐 Live Demo
+
+🔗 https://videotube-s8y97kpnq-baditra7.vercel.app
+
+## Backend API
+
+🔗 https://videotube-backend-1wpd.onrender.com
+
 # 📌 Problem Statement
 
 Most beginner video-sharing projects only focus on basic CRUD operations such as uploading and displaying videos. They lack the real-world features that make modern streaming platforms interactive and user-friendly.
